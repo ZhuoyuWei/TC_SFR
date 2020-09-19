@@ -188,7 +188,7 @@ def download_pre_day(date):
     '''
 
     get_gt(["0",filename,preday,date.strftime("%Y-%m-%d")])
-    return read_apires_file(filename)
+    return read_apires_file(os.path.join('/workdir',filename))
 
 
 
