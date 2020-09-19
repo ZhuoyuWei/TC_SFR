@@ -80,14 +80,8 @@ def get_gt(argv):
     sys.stdout.write("\n  Download completed!\n")
 
     link2 = (
-            "https://dwr.state.co.us/Tools/Stations/ExportObsTsFileResult?abbrevs=BTABESCO&parameters=DISCHRG"
-            "&por_start=" + start_date_shift.strftime("%Y-%m-%d") + "T00%3A00%3A00.000Z"
-                                                                    "&toDate=" + end_date_shift.strftime(
-        "%Y-%m-%d") + "T21%3A59%3A59.000Z"
-                      "&timeStep=" + start_date_shift.strftime("%Y-%m-%d") + "T00%3A00%3A00.000Z"
-                                                                             "&por_end=" + end_date_shift.strftime(
-        "%Y-%m-%d") + "T21%3A59%3A59.000Z&time_step=LoggedInterval"
-                      "&obs_type=best&avg_time=12%3A00%20AM&is_x_tab=true"
+            "http://13.80.70.45/tc.php?start=" + start_date_shift.strftime(
+        "%Y-%m-%d") + "&end=" + end_date_shift.strftime("%Y-%m-%d")
     )
     sys.stdout.write("  Requesting the data from dwr.state.co.us...\n")
     with open("raw2_" + file_name, "wb") as f:
@@ -150,7 +144,6 @@ def get_gt(argv):
 
     fw.close()
     return 0
-
 
 def read_apires_file(filename):
     local2lastest={}
