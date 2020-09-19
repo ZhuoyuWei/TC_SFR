@@ -218,19 +218,25 @@ def main():
         target_dates.append(datetime.strptime(target_date, "%Y-%m-%d"))
     desired_times = ["00", "06", "12", "18"]
 
-    for date in target_dates:
 
-        local2latest=download_pre_day(date)
+    with open(sys.argv[2],'w') as fout:
+        fout.write("DateTime,LocationID,ForecastTime,VendorID,Value,Units\n")
+        for date in target_dates:
 
-        for site in target_sites:
-            for day in range(11):
-                for time in desired_times:
-                    if day == 0 and time == "00": continue
-                    if day == 10 and time != "00": continue
-                    value=local2latest.get(site,0)
-                    print((date + timedelta(days=day)).strftime(
-                        "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
-                        "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value))
+            local2latest = download_pre_day(date)
+
+            for site in target_sites:
+                for day in range(11):
+                    for time in desired_times:
+                        if day == 0 and time == "00": continue
+                        if day == 10 and time != "00": continue
+                        value = local2latest.get(site, 0)
+                        #print((date + timedelta(days=day)).strftime(
+                        #    "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
+                        #    "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)
+                        fout.write((date + timedelta(days=day)).strftime(
+                            "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
+                            "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)+"\n")
 
     return 0
 
