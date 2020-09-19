@@ -1,7 +1,4 @@
 import os
-import sys
-from datetime import datetime, timedelta
-
 import requests
 import sys
 from datetime import datetime, timedelta
@@ -32,7 +29,7 @@ codemap = {
 }
 
 
-def get_gt(argv):
+def get_gt(argv,output_dir):
     if len(argv) < 3:
         print("  Usage: python3 get_gt.py [output file name] [start date] [end date]")
         return 1
@@ -70,7 +67,9 @@ def get_gt(argv):
         "%Y-%m-%d") + "T23:45%2b0000&parameterCd=00060&siteStatus=all"
     )
     sys.stdout.write("  Requesting the data from nwis.waterservices.usgs.gov...\n")
-    raw_file=os.path.join('/workdir',"raw_" + file_name)
+    raw_file=os.path.join(output_dir,"raw_" + file_name)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
     with open(raw_file, "wb") as f:
         response = requests.get(link, stream=True)
         dl = 0
@@ -86,7 +85,7 @@ def get_gt(argv):
         "%Y-%m-%d") + "&end=" + end_date_shift.strftime("%Y-%m-%d")
     )
     sys.stdout.write("  Requesting the data from dwr.state.co.us...\n")
-    raw_file2=os.path.join('/workdir',"raw2_" + file_name)
+    raw_file2=os.path.join(output_dir,"raw2_" + file_name)
     with open(raw_file2, "wb") as f:
         response = requests.get(link2, stream=True)
         dl = 0
@@ -97,7 +96,7 @@ def get_gt(argv):
             sys.stdout.flush()
     sys.stdout.write("\n  Download completed!\n")
 
-    final_file=os.path.join('/workdir',file_name)
+    final_file=os.path.join(output_dir,file_name)
     fw = open(final_file, "w")
     with open(raw_file, "r") as f:
         line = f.readline()
@@ -175,7 +174,7 @@ def read_apires_file(filename):
 
 
 
-def download_pre_day(date):
+def download_pre_day(date,output_dir):
     preday=(date - timedelta(days=1)).strftime("%Y-%m-%d")
     filename="f"+preday
     '''
@@ -187,8 +186,8 @@ def download_pre_day(date):
     os.system("cd {}".format(cur_path))
     '''
 
-    get_gt(["0",filename,preday,date.strftime("%Y-%m-%d")])
-    return read_apires_file(os.path.join('/workdir',filename))
+    get_gt(["0",filename,preday,date.strftime("%Y-%m-%d")],output_dir)
+    return read_apires_file(os.path.join(output_dir,filename))
 
 
 
@@ -220,10 +219,13 @@ def main():
 
 
     with open(sys.argv[2],'w') as fout:
+
+        output_dir=os.path.dirname(os.path.abspath(sys.argv[2]))
+
         fout.write("DateTime,LocationID,ForecastTime,VendorID,Value,Units\n")
         for date in target_dates:
 
-            local2latest = download_pre_day(date)
+            local2latest = download_pre_day(date,output_dir)
 
             for site in target_sites:
                 for day in range(11):
