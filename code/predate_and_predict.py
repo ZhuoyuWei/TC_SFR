@@ -177,7 +177,7 @@ def read_apires_file(filename):
 
 def download_pre_day(date):
     preday=(date - timedelta(days=1)).strftime("%Y-%m-%d")
-    filename="./f"+preday
+    filename="f"+preday
     '''
     cur_path=os.getcwd()
     script_path=sys.path[0]
