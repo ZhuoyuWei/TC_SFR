@@ -187,7 +187,7 @@ def download_pre_day(date):
     os.system("cd {}".format(cur_path))
     '''
 
-    get_gt(["0",filename,preday,preday])
+    get_gt(["0",filename,preday,date.strftime("%Y-%m-%d")])
     return read_apires_file(filename)
 
 
