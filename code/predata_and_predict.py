@@ -32,6 +32,7 @@ def download_pre_day(date):
     cur_path=os.getcwd()
     script_path=sys.path[0]
     os.system("cd {}".format(script_path))
+    os.system("ls -l")
     os.system("python get_gt.py {} {} {}".format(filename,preday,preday))
     os.system("cd {}".format(cur_path))
     return read_apires_file(filename)
