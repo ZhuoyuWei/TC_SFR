@@ -1,6 +1,5 @@
 import os
 import sys
-from shutil import copyfile
 from datetime import datetime, timedelta
 
 import requests
@@ -43,7 +42,9 @@ def get_gt(argv):
         endset = False
     else:
         end_date = argv[3]
+
     file_name = argv[1]
+
 
     if not validate(start_date):
         sys.stderr.write("  \"" + start_date + "\": Incorrect date format, should be YYYY-MM-DD.")
@@ -69,7 +70,8 @@ def get_gt(argv):
         "%Y-%m-%d") + "T23:45%2b0000&parameterCd=00060&siteStatus=all"
     )
     sys.stdout.write("  Requesting the data from nwis.waterservices.usgs.gov...\n")
-    with open("raw_" + file_name, "wb") as f:
+    raw_file=os.path.join('/workdir',"raw_" + file_name)
+    with open(raw_file, "wb") as f:
         response = requests.get(link, stream=True)
         dl = 0
         for data in response.iter_content(chunk_size=65536):
@@ -84,7 +86,8 @@ def get_gt(argv):
         "%Y-%m-%d") + "&end=" + end_date_shift.strftime("%Y-%m-%d")
     )
     sys.stdout.write("  Requesting the data from dwr.state.co.us...\n")
-    with open("raw2_" + file_name, "wb") as f:
+    raw_file2=os.path.join('/workdir',"raw2_" + file_name)
+    with open(raw_file2, "wb") as f:
         response = requests.get(link2, stream=True)
         dl = 0
         for data in response.iter_content(chunk_size=65536):
@@ -94,8 +97,9 @@ def get_gt(argv):
             sys.stdout.flush()
     sys.stdout.write("\n  Download completed!\n")
 
-    fw = open(file_name, "w")
-    with open("raw_" + file_name, "r") as f:
+    final_file=os.path.join('/workdir',file_name)
+    fw = open(final_file, "w")
+    with open(raw_file, "r") as f:
         line = f.readline()
         fw.write("DateTime,LocationID,Value,Units\n")
         while line:
@@ -119,7 +123,7 @@ def get_gt(argv):
                     sys.stderr.write("  Unexpected line: \"" + line + "\"")
             line = f.readline()
 
-    with open("raw2_" + file_name, "r") as f:
+    with open(raw_file2, "r") as f:
         line = f.readline()
         while line:
             if not (line.startswith("#") or line.startswith("abbrev")):
