@@ -170,6 +170,9 @@ def read_apires_file(filename):
                 except:
                     continue
                 local2lastest[local]=value
+                print("{}\t{}".format(local,value))
+
+        print(len(local2lastest))
 
     return local2lastest
 
