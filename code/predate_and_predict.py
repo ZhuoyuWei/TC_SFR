@@ -175,7 +175,7 @@ def read_apires_file(filename):
 
 
 def download_pre_day(date,output_dir):
-    preday=(date - timedelta(days=1)).strftime("%Y-%m-%d")
+    preday=(date - timedelta(days=2)).strftime("%Y-%m-%d")
     filename="f"+preday
     '''
     cur_path=os.getcwd()
@@ -186,7 +186,7 @@ def download_pre_day(date,output_dir):
     os.system("cd {}".format(cur_path))
     '''
 
-    get_gt(["0",filename,preday,date.strftime("%Y-%m-%d")],output_dir)
+    get_gt(["0",filename,preday,(date - timedelta(days=1)).strftime("%Y-%m-%d")],output_dir)
     return read_apires_file(os.path.join(output_dir,filename))
 
 
