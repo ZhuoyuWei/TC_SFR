@@ -66,7 +66,7 @@ def get_gt(argv,output_dir):
                                                                   "&endDT=" + end_date_shift.strftime(
         "%Y-%m-%d") + "T23:45%2b0000&parameterCd=00060&siteStatus=all"
     )
-    sys.stdout.write("  Requesting the data from nwis.waterservices.usgs.gov...\n")
+    sys.stderr.write("  Requesting the data from nwis.waterservices.usgs.gov...\n")
     raw_file=os.path.join(output_dir,"raw_" + file_name)
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -76,15 +76,15 @@ def get_gt(argv,output_dir):
         for data in response.iter_content(chunk_size=65536):
             dl += len(data)
             f.write(data)
-            sys.stdout.write("\r  Dowloaded so far: %s bytes" % (dl))
-            sys.stdout.flush()
-    sys.stdout.write("\n  Download completed!\n")
+            sys.stderr.write("\r  Dowloaded so far: %s bytes" % (dl))
+            sys.stderr.flush()
+    sys.stderr.write("\n  Download completed!\n")
 
     link2 = (
             "http://13.80.70.45/tc.php?start=" + start_date_shift.strftime(
         "%Y-%m-%d") + "&end=" + end_date_shift.strftime("%Y-%m-%d")
     )
-    sys.stdout.write("  Requesting the data from dwr.state.co.us...\n")
+    sys.stderr.write("  Requesting the data from dwr.state.co.us...\n")
     raw_file2=os.path.join(output_dir,"raw2_" + file_name)
     with open(raw_file2, "wb") as f:
         response = requests.get(link2, stream=True)
@@ -92,9 +92,9 @@ def get_gt(argv,output_dir):
         for data in response.iter_content(chunk_size=65536):
             dl += len(data)
             f.write(data)
-            sys.stdout.write("\r  Dowloaded so far: %s bytes" % (dl))
-            sys.stdout.flush()
-    sys.stdout.write("\n  Download completed!\n")
+            sys.stderr.write("\r  Dowloaded so far: %s bytes" % (dl))
+            sys.stderr.flush()
+    sys.stderr.write("\n  Download completed!\n")
 
     final_file=os.path.join(output_dir,file_name)
     fw = open(final_file, "w")
@@ -200,7 +200,7 @@ def main():
         print("  Usage: python3 baseline.py [target dates]")
         return 1
 
-    print("DateTime,LocationID,ForecastTime,VendorID,Value,Units")
+    #print("DateTime,LocationID,ForecastTime,VendorID,Value,Units")
 
     '''
     if not os.path.exists("./tmp"):
