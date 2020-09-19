@@ -233,7 +233,7 @@ def main():
                     for time in desired_times:
                         if day == 0 and time == "00": continue
                         if day == 10 and time != "00": continue
-                        value = local2latest.get(site, 0)
+                        value = local2latest.get(site.strip(), 0)
                         #print((date + timedelta(days=day)).strftime(
                         #    "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
                         #    "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)
