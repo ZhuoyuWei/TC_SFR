@@ -1,6 +1,10 @@
 import os
 import requests
 import sys
+import pandas as pd
+import numpy as np
+import pickle
+import lightgbm as lgb
 from datetime import datetime, timedelta
 
 
@@ -181,7 +185,98 @@ def download_pre_day(date,output_dir):
     return read_apires_file(os.path.join(output_dir,filename))
 
 
+def download_pre_several_days(date, delta_days, output_dir):
+    preday = (date - timedelta(days=delta_days)).strftime("%Y-%m-%d")
+    filename = "f" + preday
+    get_gt(["0", filename, preday, date.strftime("%Y-%m-%d")], output_dir)
+    return filename
 
+
+
+
+
+def read_ground_truth(filename):
+    df=pd.read_csv(filename)
+    print(df.columns)
+    #print('######')
+    locations=set(df["LocationID"])
+    #print(locations)
+
+    df["DateTime"]=pd.to_datetime(df["DateTime"])
+    #print(df["DateTime"])
+    df["Value"].astype('float')
+
+    loc2values={}
+
+    for loc in locations:
+        sub_df=df[df["LocationID"]==loc]
+        sub_df=sub_df.sort_values(by='DateTime',ignore_index=True)
+        #print('$$$$$$$$$$$')
+        #print(sub_df.head())
+
+        loc2values[loc]=sub_df
+
+    return df, loc2values
+
+def produce_features(filename, max_feature, fillval, ord_encoder):
+    df, local2values = read_ground_truth(filename)
+    data = []
+    locations = []
+    for local in local2values:
+        locations.append(local)
+        sub_df = local2values[local]
+        sub_df = sub_df.sort_values(by='DateTime', ignore_index=True, ascending=False)
+        features = sub_df['Value'].values[:max_feature].tolist()
+        # print('debug features type {}'.format(features) )
+        while len(features) < max_feature:
+            features.append(fillval)
+        data.append([local] + features)
+    cat_cols = ['LocationID']
+    num_cols = ["f_{}".format(i) for i in range(1, max_feature + 1)]
+    header = cat_cols + num_cols
+
+    df_res = pd.DataFrame(data, columns=header)
+    df_res = ord_encoder.transform(df_res)
+
+    return df_res, locations
+
+
+def online_infer(date, lgb_loaded_model, ord_encoder, fillval, delta_days, max_feature, output_dir):
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    filename = download_pre_several_days(date, delta_days, output_dir)
+    df_x, locations = produce_features(os.path.join(output_dir, filename),
+                                       max_feature,
+                                       fillval,
+                                       ord_encoder)
+    num_cols = ["f_{}".format(i) for i in range(1, max_feature + 1)]
+    preds = []
+    while len(preds) < 40:
+        dev_y_pred = lgb_loaded_model.predict(df_x)
+        preds.append(dev_y_pred)
+
+        for findex in range(len(num_cols) - 1, 0, -1):
+            df_x.loc[:, num_cols[findex]] = df_x.loc[:, num_cols[findex - 1]]
+
+        df_x.loc[:, num_cols[0]] = dev_y_pred
+
+    local2res = {}
+    for local in locations:
+        local2res[local] = []
+    for i in range(40):
+        for j in range(len(preds[i])):
+            local2res[locations[j]].append(preds[i][j])
+
+    return local2res
+
+def loading_models(modelfile, cefile):
+    lgb_loaded_model = lgb.Booster(model_file=modelfile)
+
+    file = open(cefile, 'rb')
+    ord_encoder = pickle.load(file)
+    file.close()
+
+    return lgb_loaded_model, ord_encoder
 
 def main():
     file = open("target_sites.csv", "r")
@@ -199,7 +294,12 @@ def main():
     copyfile('./get_gt.py','./tmp/get_gt.py')
     '''
 
-
+    lgb_loaded_model, ord_encoder = loading_models(r'/work/model.v0.txt',
+                                                   r'/work/ce.obj')
+    fillval = 66.55
+    delta_days = 15
+    max_feature = 50
+    #output_dir = r'/vc_data/zhuwe/jupyter_sever_logs/tc_sfr/wdata/test_online_pred_v0'
 
     target_date_str = sys.argv[1]
     target_dates_parts = target_date_str.split(',')
@@ -216,20 +316,25 @@ def main():
         fout.write("DateTime,LocationID,ForecastTime,VendorID,Value,Units\n")
         for date in target_dates:
 
-            local2latest = download_pre_day(date,output_dir)
+            #local2latest = download_pre_day(date,output_dir)
+            local2res = online_infer(date, lgb_loaded_model, ord_encoder, fillval, delta_days, max_feature, output_dir)
 
             for site in target_sites:
+
+                values=local2res.get(site.strip(),[0]*40)
+                vcount=0
                 for day in range(11):
                     for time in desired_times:
                         if day == 0 and time == "00": continue
                         if day == 10 and time != "00": continue
-                        value = local2latest.get(site.strip(), 0)
+                        #value = local2latest.get(site.strip(), 0)
                         #print((date + timedelta(days=day)).strftime(
                         #    "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
                         #    "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)
                         fout.write((date + timedelta(days=day)).strftime(
                             "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
-                            "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)+"\n")
+                            "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(values[vcount])+"\n")
+                        vcount+=1
 
     return 0
 
