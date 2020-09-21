@@ -1,10 +1,10 @@
-python3 -m pip install pip --upgrade
-python3 -m pip install DateTime
-python3 -m pip install requests
-python3 -m pip install numpy
-python3 -m pip install pandas
-python3 -m pip install lightgbm
-python3 -m pip install category-encoders
-python3 -m pip install pickle
+pip install pip --upgrade
+pip install DateTime
+pip install requests
+pip install numpy
+pip install pandas==1.1.2
+pip install lightgbm
+pip install category-encoders
+pip install pickle-mixin
 
 python3 predate_and_predict.py $1 $2
