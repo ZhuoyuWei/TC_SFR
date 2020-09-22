@@ -373,8 +373,8 @@ def main():
 
 
     fillval = 0
-    delta_days = 150
-    max_feature = 500
+    delta_days = 15
+    max_feature = 50
     #output_dir = r'/vc_data/zhuwe/jupyter_sever_logs/tc_sfr/wdata/test_online_pred_v0'
 
     target_date_str = sys.argv[1]
