@@ -278,6 +278,79 @@ def loading_models(modelfile, cefile):
 
     return lgb_loaded_model, ord_encoder
 
+
+def loading_models_locally(modeldir, locations):
+    local2model = {}
+    for local in locations:
+        filename = os.path.join(modeldir, 'model_{}.lgb'.format(local))
+        lgb_loaded_model = lgb.Booster(model_file=filename)
+        local2model[local] = lgb_loaded_model
+
+    '''
+    file = open(cefile,'rb')
+    ord_encoder = pickle.load(file)
+    file.close()
+    '''
+
+    return local2model
+
+
+def produce_features_locally(filename, max_feature, fillval):
+    df, local2values = read_ground_truth(filename)
+    data = []
+    locations = []
+    for local in local2values:
+        locations.append(local)
+        sub_df = local2values[local]
+        sub_df = sub_df.sort_values(by='DateTime', ignore_index=True, ascending=False)
+        features = sub_df['Value'].values[:max_feature].tolist()
+        # print('debug features type {}'.format(features) )
+        while len(features) < max_feature:
+            features.append(fillval)
+        data.append(features)
+    # cat_cols=['LocationID']
+    num_cols = ["f_{}".format(i) for i in range(1, max_feature + 1)]
+    # header=cat_cols+num_cols
+
+    df_res = pd.DataFrame(data, columns=num_cols)
+    # df_res=ord_encoder.transform(df_res)
+
+    return df_res, locations
+
+def online_infer_locally(date, local2lgb_loaded_model, fillval, delta_days, max_feature, output_dir):
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    filename = download_pre_several_days(date, delta_days, output_dir)
+    df_x, locations = produce_features_locally(os.path.join(output_dir, filename),
+                                               max_feature,
+                                               fillval)
+    num_cols = ["f_{}".format(i) for i in range(1, max_feature + 1)]
+    preds = []
+    while len(preds) < 40:
+        dev_y_pred = []
+        for i in range(len(locations)):
+            lgb_loaded_model = local2lgb_loaded_model[locations[i]]
+            dev_y_pred_local = lgb_loaded_model.predict(df_x.iloc[i])
+            dev_y_pred.append(dev_y_pred_local)
+        dev_y_pred = np.concatenate(dev_y_pred)
+
+        preds.append(dev_y_pred)
+
+        for findex in range(len(num_cols) - 1, 0, -1):
+            df_x.loc[:, num_cols[findex]] = df_x.loc[:, num_cols[findex - 1]]
+
+        df_x.loc[:, num_cols[0]] = dev_y_pred
+
+    local2res = {}
+    for local in locations:
+        local2res[local] = []
+    for i in range(40):
+        for j in range(len(preds[i])):
+            local2res[locations[j]].append(preds[i][j])
+
+    return local2res
+
+
 def main():
     file = open("target_sites.csv", "r")
     target_sites = file.readlines()[1:]
@@ -293,10 +366,13 @@ def main():
         os.mkdir("./tmp")
     copyfile('./get_gt.py','./tmp/get_gt.py')
     '''
+    locations=[]
+    for site in target_sites:
+        locations.append(site.strip())
+    local2lgb_loaded_model= loading_models_locally(r'/work/',locations)
 
-    lgb_loaded_model, ord_encoder = loading_models(r'/work/model.v0.txt',
-                                                   r'/work/ce.obj')
-    fillval = 66.55
+
+    fillval = 0
     delta_days = 15
     max_feature = 50
     #output_dir = r'/vc_data/zhuwe/jupyter_sever_logs/tc_sfr/wdata/test_online_pred_v0'
@@ -317,7 +393,7 @@ def main():
         for date in target_dates:
 
             #local2latest = download_pre_day(date,output_dir)
-            local2res = online_infer(date, lgb_loaded_model, ord_encoder, fillval, delta_days, max_feature, output_dir)
+            local2res = online_infer_locally(date, local2lgb_loaded_model, fillval, delta_days, max_feature, output_dir)
 
             for site in target_sites:
 
