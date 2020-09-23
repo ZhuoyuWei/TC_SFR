@@ -384,6 +384,8 @@ def main():
         target_dates.append(datetime.strptime(target_date, "%Y-%m-%d"))
     desired_times = ["00", "06", "12", "18"]
 
+    ignore_sites=set(['NFSW4','LABW4','NFDC1','BNDN5'])
+
 
     with open(sys.argv[2],'w') as fout:
 
@@ -407,9 +409,12 @@ def main():
                         #print((date + timedelta(days=day)).strftime(
                         #    "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
                         #    "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)
+                        value=values[vcount]
+                        if site.strip() in ignore_sites:
+                            value=0
                         fout.write((date + timedelta(days=day)).strftime(
                             "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
-                            "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(values[vcount])+"\n")
+                            "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)+"\n")
                         vcount+=1
 
     return 0
