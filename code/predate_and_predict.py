@@ -410,10 +410,10 @@ def main():
                         #    "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
                         #    "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)
                         #value=values[vcount]
-                        if vcount<10:
+                        if vcount<5:
                             value=values[vcount]
                         else:
-                            value=values[9]
+                            value=values[4]
                         if site.strip() in ignore_sites:
                             value=0
                         fout.write((date + timedelta(days=day)).strftime(
