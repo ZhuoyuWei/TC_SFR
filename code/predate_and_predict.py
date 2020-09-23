@@ -334,7 +334,10 @@ def loading_models_locally(modeldir, locations):
 
 
 def produce_features_locally(filename, max_feature, fillval):
-    df, local2values = read_ground_truth(filename)
+    df, local2values = read_ground_truth_withoutfloat(filename)
+
+    df = df[df['Value'] != 'Ice']
+    local2values = convert_local2values(df)
     data = []
     locations = []
     for local in local2values:
