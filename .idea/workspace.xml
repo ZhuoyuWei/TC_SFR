@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix">
-      <change beforePath="$PROJECT_DIR$/code/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/code/Dockerfile" afterDir="false" />
+    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix back">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,16 +38,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Dockerfile" value="59" />
+          <entry key="Dockerfile" value="63" />
           <entry key="dummy" value="1" />
           <entry key="py" value="4391" />
-          <entry key="sh" value="205" />
-          <entry key="txt" value="198" />
+          <entry key="sh" value="206" />
+          <entry key="txt" value="207" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="463" />
+          <entry key="PLAIN_TEXT" value="477" />
           <entry key="Python" value="4391" />
         </counts>
       </usages-collector>
@@ -103,20 +103,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="294">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/test.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="126">
+              <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -157,11 +157,11 @@
         <option value="$PROJECT_DIR$/get_gt/offline_produce_data.py" />
         <option value="$PROJECT_DIR$/analysis/draw_curves.py" />
         <option value="$PROJECT_DIR$/code/model.py" />
-        <option value="$PROJECT_DIR$/code/test.sh" />
         <option value="$PROJECT_DIR$/code/predate_and_predict.py" />
         <option value="$PROJECT_DIR$/code/building_testing_scoring.sh.py" />
         <option value="$PROJECT_DIR$/code/building_testing_scoring.sh" />
         <option value="$PROJECT_DIR$/code/Dockerfile" />
+        <option value="$PROJECT_DIR$/code/test.sh" />
       </list>
     </option>
   </component>
@@ -485,12 +485,39 @@
       <option name="project" value="LOCAL" />
       <updated>1600873877908</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix 2">
+      <created>1600874023370</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1600874023370</updated>
+    </task>
+    <task id="LOCAL-00033" summary="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix 3">
+      <created>1600874084476</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1600874084476</updated>
+    </task>
+    <task id="LOCAL-00034" summary="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix 4">
+      <created>1600874140049</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1600874140049</updated>
+    </task>
+    <task id="LOCAL-00035" summary="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix back">
+      <created>1600874216498</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1600874216499</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966262" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -516,10 +543,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test submission 3|debug 6" />
-    <MESSAGE value="test submission 3|debug 7" />
-    <MESSAGE value="test submission 3|debug 8" />
-    <MESSAGE value="test submission 3|debug 9" />
     <MESSAGE value="test submission 3|debug 10" />
     <MESSAGE value="test submission 3|debug 11" />
     <MESSAGE value="test submission 3|debug 12" />
@@ -541,7 +564,11 @@
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix" />
+    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix 2" />
+    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix 3" />
+    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix 4" />
+    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix back" />
+    <option name="LAST_COMMIT_MESSAGE" value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix back" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/baseline.py">
@@ -599,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/test.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
@@ -625,8 +645,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="294">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/test.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
         </state>
       </provider>
     </entry>
