@@ -11,7 +11,10 @@ RUN apt-get update && \
         nano \
         python3-pip \
         software-properties-common
-		
+
+RUN pip3 install pip --upgrade && \
+    pip3 install DateTime requests numpy pandas==1.1.2 lightgbm category-encoders pickle-mixin
+
 WORKDIR /work
 
 # copy entire directory where docker file is into docker container at /work
