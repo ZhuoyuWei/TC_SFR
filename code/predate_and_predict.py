@@ -219,8 +219,45 @@ def read_ground_truth(filename):
 
     return df, loc2values
 
+def read_ground_truth_withoutfloat(filename):
+    df=pd.read_csv(filename)
+    print(df.columns)
+    #print('######')
+    locations=set(df["LocationID"])
+    #print(locations)
+
+    df["DateTime"]=pd.to_datetime(df["DateTime"])
+    #print(df["DateTime"])
+    #df["Value"].astype('float')
+
+    loc2values={}
+
+    for loc in locations:
+        sub_df=df[df["LocationID"]==loc]
+        sub_df=sub_df.sort_values(by='DateTime',ignore_index=True)
+        #print('$$$$$$$$$$$')
+        #print(sub_df.head())
+
+        loc2values[loc]=sub_df
+
+    return df, loc2values
+    
+def convert_local2values(df):
+    locations=set(df["LocationID"])
+    loc2values={}
+    for loc in locations:
+        sub_df=df[df["LocationID"]==loc]
+        sub_df=sub_df.sort_values(by='DateTime',ignore_index=True)
+        loc2values[loc]=sub_df  
+    return loc2values    
+
 def produce_features(filename, max_feature, fillval, ord_encoder):
-    df, local2values = read_ground_truth(filename)
+    df, local2values = read_ground_truth_withoutfloat(filename)
+
+    df = df[df['Value'] != 'Ice']
+    local2values = convert_local2values(df)
+
+
     data = []
     locations = []
     for local in local2values:

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test submission 10 more data|back to 50|+ignore|test only first 3">
+    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test submission 10 more data|back to 50|+ignore|test only first 2|dont donwload">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/predate_and_predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/predate_and_predict.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,29 +27,30 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Dockerfile" value="3" />
-          <entry key="py" value="11" />
+          <entry key="csv" value="1" />
+          <entry key="py" value="13" />
           <entry key="sh" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="11" />
+          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="Python" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="63" />
           <entry key="dummy" value="1" />
-          <entry key="py" value="4399" />
+          <entry key="py" value="4444" />
           <entry key="sh" value="206" />
-          <entry key="txt" value="211" />
+          <entry key="txt" value="229" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="481" />
-          <entry key="Python" value="4399" />
+          <entry key="PLAIN_TEXT" value="499" />
+          <entry key="Python" value="4444" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -61,62 +63,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/get_gt/get_gt.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
-              <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="132" column="31" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-                <marker date="1600853188693" expanded="true" signature="148:153" ph="..." />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/code/target_sites.csv">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="415" column="42" selection-start-line="415" selection-start-column="42" selection-end-line="415" selection-end-column="42" />
+            <state relative-caret-position="382">
+              <caret line="248" column="43" lean-forward="true" selection-start-line="248" selection-start-column="43" selection-end-line="248" selection-end-column="43" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+                <marker date="1600882301144" expanded="true" signature="8510:8511" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/building_testing_scoring.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/test.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -139,6 +98,8 @@
       <find>with</find>
       <find>workdir</find>
       <find>std</find>
+      <find>load</find>
+      <find>read_ground_truth</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -534,11 +495,33 @@
       <option name="project" value="LOCAL" />
       <updated>1600875225438</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="test submission 10 more data|back to 50|+ignore|test only first 2">
+      <created>1600875349352</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1600875349352</updated>
+    </task>
+    <task id="LOCAL-00040" summary="test submission 10 more data|back to 50|+ignore|test only first">
+      <created>1600875498740</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1600875498740</updated>
+    </task>
+    <task id="LOCAL-00041" summary="test submission 10 more data|back to 50|+ignore|test only first 2|dont donwload">
+      <created>1600881698094</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1600881698094</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966262" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -564,8 +547,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test submission 3|debug 12" />
-    <MESSAGE value="test submission 3|debug 13" />
     <MESSAGE value="test submission 3|debug 14" />
     <MESSAGE value="test submission 8 successful" />
     <MESSAGE value="test submission 9|propose" />
@@ -577,7 +558,6 @@
     <MESSAGE value="test submission 10 more data|500?" />
     <MESSAGE value="test submission 10 more data|back to 50" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore" />
-    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 10" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special" />
@@ -589,7 +569,10 @@
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix back" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 4" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="test submission 10 more data|back to 50|+ignore|test only first 3" />
+    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 2" />
+    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first" />
+    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 2|dont donwload" />
+    <option name="LAST_COMMIT_MESSAGE" value="test submission 10 more data|back to 50|+ignore|test only first 2|dont donwload" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/baseline.py">
@@ -613,9 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/target_sites.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/get_gt/offline_produce_data.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -636,21 +616,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="132" column="31" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <marker date="1600853188693" expanded="true" signature="148:153" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/building_testing_scoring.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/test.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -661,19 +637,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/test.sh">
+    <entry file="file://$PROJECT_DIR$/code/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        <state relative-caret-position="500">
+          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+            <marker date="1600853188693" expanded="true" signature="148:153" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/code/target_sites.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="415" column="42" selection-start-line="415" selection-start-column="42" selection-end-line="415" selection-end-column="42" />
+        <state relative-caret-position="382">
+          <caret line="248" column="43" lean-forward="true" selection-start-line="248" selection-start-column="43" selection-end-line="248" selection-end-column="43" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+            <marker date="1600882301144" expanded="true" signature="8510:8511" ph="..." />
           </folding>
         </state>
       </provider>
