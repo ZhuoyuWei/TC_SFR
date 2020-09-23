@@ -188,7 +188,8 @@ def download_pre_day(date,output_dir):
 def download_pre_several_days(date, delta_days, output_dir):
     preday = (date - timedelta(days=delta_days)).strftime("%Y-%m-%d")
     filename = "f" + preday
-    get_gt(["0", filename, preday, date.strftime("%Y-%m-%d")], output_dir)
+    if not os.path.exists(filename):
+        get_gt(["0", filename, preday, date.strftime("%Y-%m-%d")], output_dir)
     return filename
 
 
@@ -410,10 +411,10 @@ def main():
                         #    "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
                         #    "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)
                         #value=values[vcount]
-                        if vcount<1:
+                        if vcount<2:
                             value=values[vcount]
                         else:
-                            value=values[0]
+                            value=values[1]
                         #if site.strip() in ignore_sites:
                         #    value=0
                         fout.write((date + timedelta(days=day)).strftime(
