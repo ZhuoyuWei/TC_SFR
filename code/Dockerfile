@@ -12,8 +12,8 @@ RUN apt-get update && \
         python3-pip \
         software-properties-common
 
-RUN pip3 install pip --upgrade && \
-    pip3 install DateTime requests numpy pandas==1.1.2 lightgbm category-encoders pickle-mixin
+RUN python3 -m pip install pip --upgrade
+RUN python3 -m pip install DateTime requests numpy pandas==1.1.2 lightgbm category-encoders pickle-mixin
 
 WORKDIR /work
 
