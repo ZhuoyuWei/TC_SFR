@@ -409,7 +409,8 @@ def main():
                         #print((date + timedelta(days=day)).strftime(
                         #    "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
                         #    "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)
-                        value=values[vcount]
+                        #value=values[vcount]
+                        value=values[0]
                         if site.strip() in ignore_sites:
                             value=0
                         fout.write((date + timedelta(days=day)).strftime(
