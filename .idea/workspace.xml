@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test submission 10 more data|back to 50|+ignore|test only first 2|dont donwload">
+    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test submission 10 more data|fix bug last 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/predate_and_predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/predate_and_predict.py" afterDir="false" />
     </list>
@@ -15,13 +15,13 @@
     <session id="607064828">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="3" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -42,15 +42,15 @@
         <counts>
           <entry key="Dockerfile" value="63" />
           <entry key="dummy" value="1" />
-          <entry key="py" value="4444" />
+          <entry key="py" value="5003" />
           <entry key="sh" value="206" />
-          <entry key="txt" value="229" />
+          <entry key="txt" value="244" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="499" />
-          <entry key="Python" value="4444" />
+          <entry key="PLAIN_TEXT" value="514" />
+          <entry key="Python" value="5003" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -70,11 +70,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="248" column="43" lean-forward="true" selection-start-line="248" selection-start-column="43" selection-end-line="248" selection-end-column="43" />
+            <state relative-caret-position="248">
+              <caret line="489" column="29" lean-forward="true" selection-start-line="489" selection-start-column="29" selection-end-line="489" selection-end-column="29" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1600882301144" expanded="true" signature="8510:8511" ph="..." />
+                <marker date="1600962056030" expanded="true" signature="8792:8793" ph="..." />
+                <marker date="1600962056030" expanded="true" signature="11395:11726" ph="..." />
               </folding>
             </state>
           </provider>
@@ -140,6 +141,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,7 +168,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -516,7 +517,21 @@
       <option name="project" value="LOCAL" />
       <updated>1600881698094</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="test submission 10 more data|fix bug last">
+      <created>1600882348524</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1600882348524</updated>
+    </task>
+    <task id="LOCAL-00043" summary="test submission 10 more data|fix bug last 2">
+      <created>1600882601591</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1600882601591</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -547,8 +562,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test submission 3|debug 14" />
-    <MESSAGE value="test submission 8 successful" />
     <MESSAGE value="test submission 9|propose" />
     <MESSAGE value="test submission 9|propose|debug 1" />
     <MESSAGE value="test submission 9|propose|debug 2" />
@@ -572,7 +585,9 @@
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 2" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 2|dont donwload" />
-    <option name="LAST_COMMIT_MESSAGE" value="test submission 10 more data|back to 50|+ignore|test only first 2|dont donwload" />
+    <MESSAGE value="test submission 10 more data|fix bug last" />
+    <MESSAGE value="test submission 10 more data|fix bug last 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="test submission 10 more data|fix bug last 2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/baseline.py">
@@ -641,10 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <marker date="1600853188693" expanded="true" signature="148:153" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -653,11 +664,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="248" column="43" lean-forward="true" selection-start-line="248" selection-start-column="43" selection-end-line="248" selection-end-column="43" />
+        <state relative-caret-position="248">
+          <caret line="489" column="29" lean-forward="true" selection-start-line="489" selection-start-column="29" selection-end-line="489" selection-end-column="29" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1600882301144" expanded="true" signature="8510:8511" ph="..." />
+            <marker date="1600962056030" expanded="true" signature="8792:8793" ph="..." />
+            <marker date="1600962056030" expanded="true" signature="11395:11726" ph="..." />
           </folding>
         </state>
       </provider>
