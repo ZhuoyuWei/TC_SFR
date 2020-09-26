@@ -128,7 +128,9 @@ def ftrain(train_input, train_target, Epoch, batch_size, lr, beta1, beta2, weigh
     train_iterator = trange(Epoch, desc="Epoch")
     for _ in train_iterator:
         epoch_iterator = tqdm(trainloader, desc="Iteration")
-        for step, x, y in enumerate(epoch_iterator):
+        for step, batch in enumerate(epoch_iterator):
+
+            (x,y)=batch
 
             optimizer.zero_grad()
 
