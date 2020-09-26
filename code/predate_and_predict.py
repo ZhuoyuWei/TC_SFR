@@ -339,7 +339,10 @@ def loading_models_400(model_dir,locations):
         local2models[local]=[]
         for i in range(40):
             filename=os.path.join(model_dir,'{}_{}.model'.format(local,i))
-            lgb_loaded_model = lgb.Booster(model_file=filename)
+            if os.path.exists(filename):
+                lgb_loaded_model = lgb.Booster(model_file=filename)
+            else:
+                lgb_loaded_model = local2models[local][-1]
             local2models[local].append(lgb_loaded_model)
     return local2models
 
@@ -455,7 +458,7 @@ def main():
 
     fillval = 0
     delta_days = 15
-    max_feature = 50
+    max_feature = 60
     #output_dir = r'/vc_data/zhuwe/jupyter_sever_logs/tc_sfr/wdata/test_online_pred_v0'
 
     target_date_str = sys.argv[1]
@@ -477,7 +480,7 @@ def main():
 
             #local2latest = download_pre_day(date,output_dir)
             local2res = online_infer_simple(date, local2lgb_loaded_model, fillval, delta_days,
-                                            max_feature, output_dir,60,40)
+                                            max_feature, output_dir,60,1)
 
             for site in target_sites:
 
