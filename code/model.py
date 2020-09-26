@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import numpy as np
 import os
+import sys
 
 def read_ground_truth(filename):
     df=pd.read_csv(filename)
@@ -258,6 +259,21 @@ def fpredict(test_input,
 
     return res
 
+def load_model(filename,seqlen=50,layers=3):
+    model = RNNForTimeSeries(seqlen, layers)
+    model.load_state_dict(torch.load(filename))
+    if torch.cuda.is_available():
+        model.cuda()
+    return model
+
+def loading_models_rnn(model_dir,locations):
+    local2models={}
+    for local in locations:
+        model=load_model(os.path.join(model_dir,'{}'))
+    return local2models
+
+
+
 
 # generate sequence data for local by slide window
 def produce_data(df, train_len, test_len=40):
@@ -288,11 +304,22 @@ if __name__=='__main__':
     loc2data = produce_data(df, x_len, y_len)
 
     model_dir = '/vc_data/zhuwe/jupyter_sever_logs/tc_sfr/wdata/rnn_models'
+
+    istrain=(sys.argv[1].lower() == 'train')
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
 
+    local2models={}
+    if not istrain:
+        locations=['BNDN5','ARWN8','TCCC1','CARO2','ESSC2','NFDC1','LABW4','CLNK1','TRAC2','NFSW4']
+        local2models=loading_models_rnn(model_dir,locations)
+
+
+
+
     for loc in loc2data:
         data = loc2data[loc]
+
 
         train_size = int(data.shape[0] * 0.9)
         train = data[:train_size, :]
@@ -304,7 +331,8 @@ if __name__=='__main__':
         dev_x = dev[:, :x_len]
         dev_y = dev[:, x_len:]
 
-        ftrain(train_input=train_x,
+        if istrain:
+            ftrain(train_input=train_x,
                train_target=train_y,
                Epoch=5,
                batch_size=128,
@@ -313,6 +341,13 @@ if __name__=='__main__':
                beta2=0.999,
                weight_decay=0,
                save_model_path=os.path.join(model_dir, '{}_model.json'.format(loc)))
+
+        else:
+            res=fpredict(test_input=dev_x,
+                 batch_size=128,
+                 model=local2models[loc],
+                 max_decode_length=40)
+            print(res)
 
 
 
