@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test nn method|fix bug 2">
+    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test nn method|fix bug 5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/model.py" afterDir="false" />
     </list>
@@ -45,15 +45,15 @@
         <counts>
           <entry key="Dockerfile" value="63" />
           <entry key="dummy" value="1" />
-          <entry key="py" value="6248" />
+          <entry key="py" value="6257" />
           <entry key="sh" value="232" />
-          <entry key="txt" value="386" />
+          <entry key="txt" value="388" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="682" />
-          <entry key="Python" value="6248" />
+          <entry key="PLAIN_TEXT" value="684" />
+          <entry key="Python" value="6257" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -82,12 +82,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="253" column="31" selection-start-line="253" selection-start-column="31" selection-end-line="253" selection-end-column="31" />
+            <state relative-caret-position="130">
+              <caret line="252" column="36" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1601131855958" expanded="true" signature="5985:5986" ph="..." />
-                <marker date="1601131855958" expanded="true" signature="7342:7345" ph="..." />
+                <marker date="1601132417559" expanded="true" signature="5985:5986" ph="..." />
+                <marker date="1601132417559" expanded="true" signature="7350:7353" ph="..." />
               </folding>
             </state>
           </provider>
@@ -259,27 +259,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600140114723</updated>
-    </task>
-    <task id="LOCAL-00006" summary="test submission 3|debug 5">
-      <created>1600480278433</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1600480278433</updated>
-    </task>
-    <task id="LOCAL-00007" summary="test submission 3|debug 6">
-      <created>1600480352126</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1600480352126</updated>
-    </task>
-    <task id="LOCAL-00008" summary="test submission 3|debug 7">
-      <created>1600480583276</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1600480583276</updated>
     </task>
     <task id="LOCAL-00009" summary="test submission 3|debug 8">
       <created>1600480725811</created>
@@ -603,7 +582,28 @@
       <option name="project" value="LOCAL" />
       <updated>1601131111949</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="test nn method|fix bug 2">
+      <created>1601131860413</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1601131860413</updated>
+    </task>
+    <task id="LOCAL-00056" summary="test nn method|fix bug 4">
+      <created>1601131983459</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1601131983459</updated>
+    </task>
+    <task id="LOCAL-00057" summary="test nn method|fix bug 5">
+      <created>1601132126958</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1601132126958</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -633,8 +633,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special" />
-    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix 2" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix 3" />
@@ -658,7 +656,9 @@
     <MESSAGE value="test nn method" />
     <MESSAGE value="test nn method|fix bug" />
     <MESSAGE value="test nn method|fix bug 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="test nn method|fix bug 2" />
+    <MESSAGE value="test nn method|fix bug 4" />
+    <MESSAGE value="test nn method|fix bug 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="test nn method|fix bug 5" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/baseline.py">
@@ -747,12 +747,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="253" column="31" selection-start-line="253" selection-start-column="31" selection-end-line="253" selection-end-column="31" />
+        <state relative-caret-position="130">
+          <caret line="252" column="36" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1601131855958" expanded="true" signature="5985:5986" ph="..." />
-            <marker date="1601131855958" expanded="true" signature="7342:7345" ph="..." />
+            <marker date="1601132417559" expanded="true" signature="5985:5986" ph="..." />
+            <marker date="1601132417559" expanded="true" signature="7350:7353" ph="..." />
           </folding>
         </state>
       </provider>
