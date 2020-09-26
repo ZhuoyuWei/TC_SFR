@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test submission 10 more data|rnn|fix|train completed, change branch">
+    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test submission 10 more data|rnn|cuda is avaliable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/predate_and_predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/predate_and_predict.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,15 +15,16 @@
     <session id="607064828">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -45,15 +45,15 @@
         <counts>
           <entry key="Dockerfile" value="63" />
           <entry key="dummy" value="1" />
-          <entry key="py" value="5670" />
+          <entry key="py" value="5720" />
           <entry key="sh" value="232" />
-          <entry key="txt" value="292" />
+          <entry key="txt" value="333" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="588" />
-          <entry key="Python" value="5670" />
+          <entry key="PLAIN_TEXT" value="629" />
+          <entry key="Python" value="5720" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -68,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2138">
+            <state relative-caret-position="8988">
               <caret line="435" column="49" selection-start-line="435" selection-start-column="49" selection-end-line="435" selection-end-column="49" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -82,11 +82,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="298" column="34" lean-forward="true" selection-start-line="298" selection-start-column="34" selection-end-line="298" selection-end-column="34" />
+            <state relative-caret-position="235">
+              <caret line="284" column="14" lean-forward="true" selection-start-line="284" selection-start-column="14" selection-end-line="284" selection-end-column="14" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1601100382372" expanded="true" signature="5887:5888" ph="..." />
+                <marker date="1601122482156" expanded="true" signature="5975:5976" ph="..." />
               </folding>
             </state>
           </provider>
@@ -158,6 +158,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -184,7 +185,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -576,7 +576,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601099226834</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="test submission 10 more data|rnn|fix|train completed, change branch|train directly">
+      <created>1601100397120</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1601100397120</updated>
+    </task>
+    <task id="LOCAL-00049" summary="test submission 10 more data|rnn|cuda is avaliable">
+      <created>1601100481918</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1601100481918</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -607,8 +621,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test submission 10 more data" />
-    <MESSAGE value="test submission 11 locally" />
     <MESSAGE value="test submission 10 more data|500?" />
     <MESSAGE value="test submission 10 more data|back to 50" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore" />
@@ -632,7 +644,9 @@
     <MESSAGE value="test submission 10 more data|rnn" />
     <MESSAGE value="test submission 10 more data|rnn|fix" />
     <MESSAGE value="test submission 10 more data|rnn|fix|train completed, change branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="test submission 10 more data|rnn|fix|train completed, change branch" />
+    <MESSAGE value="test submission 10 more data|rnn|fix|train completed, change branch|train directly" />
+    <MESSAGE value="test submission 10 more data|rnn|cuda is avaliable" />
+    <option name="LAST_COMMIT_MESSAGE" value="test submission 10 more data|rnn|cuda is avaliable" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/baseline.py">
@@ -702,7 +716,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2138">
+        <state relative-caret-position="8988">
           <caret line="435" column="49" selection-start-line="435" selection-start-column="49" selection-end-line="435" selection-end-column="49" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -717,11 +731,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="298" column="34" lean-forward="true" selection-start-line="298" selection-start-column="34" selection-end-line="298" selection-end-column="34" />
+        <state relative-caret-position="235">
+          <caret line="284" column="14" lean-forward="true" selection-start-line="284" selection-start-column="14" selection-end-line="284" selection-end-column="14" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1601100382372" expanded="true" signature="5887:5888" ph="..." />
+            <marker date="1601122482156" expanded="true" signature="5975:5976" ph="..." />
           </folding>
         </state>
       </provider>
