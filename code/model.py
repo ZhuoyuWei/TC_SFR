@@ -269,7 +269,7 @@ def load_model(filename,seqlen=50,layers=3):
 def loading_models_rnn(model_dir,locations):
     local2models={}
     for local in locations:
-        model=load_model(os.path.join(model_dir,'{}_model.json'.format(loc)))
+        model=load_model(os.path.join(model_dir,'{}_model.json'.format(local)))
         local2models[local]=model
     return local2models
 
