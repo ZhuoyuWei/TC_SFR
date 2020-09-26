@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test nn method">
+    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test nn method|fix bug 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/model.py" afterDir="false" />
     </list>
@@ -45,15 +45,15 @@
         <counts>
           <entry key="Dockerfile" value="63" />
           <entry key="dummy" value="1" />
-          <entry key="py" value="6183" />
+          <entry key="py" value="6248" />
           <entry key="sh" value="232" />
-          <entry key="txt" value="374" />
+          <entry key="txt" value="386" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="670" />
-          <entry key="Python" value="6183" />
+          <entry key="PLAIN_TEXT" value="682" />
+          <entry key="Python" value="6248" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -68,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8988">
+            <state relative-caret-position="752">
               <caret line="435" column="49" selection-start-line="435" selection-start-column="49" selection-end-line="435" selection-end-column="49" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -82,12 +82,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="268" column="44" lean-forward="true" selection-start-line="268" selection-start-column="44" selection-end-line="268" selection-end-column="44" />
+            <state relative-caret-position="151">
+              <caret line="253" column="31" selection-start-line="253" selection-start-column="31" selection-end-line="253" selection-end-column="31" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1601129848928" expanded="true" signature="5986:5987" ph="..." />
-                <marker date="1601129848928" expanded="true" signature="7282:7285" ph="..." />
+                <marker date="1601131855958" expanded="true" signature="5985:5986" ph="..." />
+                <marker date="1601131855958" expanded="true" signature="7342:7345" ph="..." />
               </folding>
             </state>
           </provider>
@@ -130,6 +130,7 @@
       <find>50</find>
       <find>batch</find>
       <find>local2models</find>
+      <find>to_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -258,20 +259,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600140114723</updated>
-    </task>
-    <task id="LOCAL-00004" summary="test submission 3|debug 3">
-      <created>1600480139300</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1600480139300</updated>
-    </task>
-    <task id="LOCAL-00005" summary="test submission 3|debug 4">
-      <created>1600480212947</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1600480212947</updated>
     </task>
     <task id="LOCAL-00006" summary="test submission 3|debug 5">
       <created>1600480278433</created>
@@ -602,12 +589,25 @@
       <option name="project" value="LOCAL" />
       <updated>1601127350039</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="test nn method|fix bug">
+      <created>1601129871463</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1601129871463</updated>
+    </task>
+    <task id="LOCAL-00054" summary="test nn method|fix bug 2">
+      <created>1601131111948</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1601131111949</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966262" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -633,8 +633,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 10" />
-    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5|remove special|test docker scoring|fix" />
@@ -658,7 +656,9 @@
     <MESSAGE value="test submission 10 more data|rnn|cuda is avaliable|batch_size=128" />
     <MESSAGE value="test submission 10 more data|predict" />
     <MESSAGE value="test nn method" />
-    <option name="LAST_COMMIT_MESSAGE" value="test nn method" />
+    <MESSAGE value="test nn method|fix bug" />
+    <MESSAGE value="test nn method|fix bug 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="test nn method|fix bug 2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/baseline.py">
@@ -723,18 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8988">
-          <caret line="435" column="49" selection-start-line="435" selection-start-column="49" selection-end-line="435" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1601099932331" expanded="true" signature="8792:8793" ph="..." />
-            <marker date="1601099932331" expanded="true" signature="11395:11848" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/train.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -745,14 +733,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="435" column="49" selection-start-line="435" selection-start-column="49" selection-end-line="435" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1601099932331" expanded="true" signature="8792:8793" ph="..." />
+            <marker date="1601099932331" expanded="true" signature="11395:11848" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/code/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="268" column="44" lean-forward="true" selection-start-line="268" selection-start-column="44" selection-end-line="268" selection-end-column="44" />
+        <state relative-caret-position="151">
+          <caret line="253" column="31" selection-start-line="253" selection-start-column="31" selection-end-line="253" selection-end-column="31" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1601129848928" expanded="true" signature="5986:5987" ph="..." />
-            <marker date="1601129848928" expanded="true" signature="7282:7285" ph="..." />
+            <marker date="1601131855958" expanded="true" signature="5985:5986" ph="..." />
+            <marker date="1601131855958" expanded="true" signature="7342:7345" ph="..." />
           </folding>
         </state>
       </provider>
