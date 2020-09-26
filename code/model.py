@@ -3,6 +3,67 @@ from torch.utils.data import Dataset, DataLoader
 from torch.optim import Adam
 import torch
 import numpy as np
+import pandas as pd
+import numpy as np
+import os
+
+def read_ground_truth(filename):
+    df=pd.read_csv(filename)
+    print(df.columns)
+    #print('######')
+    locations=set(df["LocationID"])
+    #print(locations)
+
+    df["DateTime"]=pd.to_datetime(df["DateTime"])
+    #print(df["DateTime"])
+    df["Value"].astype('float')
+
+    loc2values={}
+
+    for loc in locations:
+        sub_df=df[df["LocationID"]==loc]
+        sub_df=sub_df.sort_values(by='DateTime',ignore_index=True)
+        #print('$$$$$$$$$$$')
+        #print(sub_df.head())
+
+        loc2values[loc]=sub_df
+
+    return df, loc2values
+
+def read_ground_truth_withoutfloat(filename):
+    df=pd.read_csv(filename)
+    print(df.columns)
+    #print('######')
+    locations=set(df["LocationID"])
+    #print(locations)
+
+    df["DateTime"]=pd.to_datetime(df["DateTime"])
+    #print(df["DateTime"])
+    #df["Value"].astype('float')
+
+    loc2values={}
+
+    for loc in locations:
+        sub_df=df[df["LocationID"]==loc]
+        sub_df=sub_df.sort_values(by='DateTime',ignore_index=True)
+        #print('$$$$$$$$$$$')
+        #print(sub_df.head())
+
+        loc2values[loc]=sub_df
+
+    return df, loc2values
+
+
+
+def convert_local2values(df):
+    locations=set(df["LocationID"])
+    loc2values={}
+    for loc in locations:
+        sub_df=df[df["LocationID"]==loc]
+        sub_df=sub_df.sort_values(by='DateTime',ignore_index=True)
+        loc2values[loc]=sub_df
+    return loc2values
+
 
 from tqdm import tqdm, trange
 
@@ -159,7 +220,7 @@ def ftrain(train_input, train_target,
 
 def fpredict(test_input,
              batch_size,
-           save_model_path='model.json',
+           model,
            max_decode_length=40):
     testset = TSDataset(X=test_input)
     testloader = DataLoader(testset, batch_size=batch_size, shuffle=False, sampler=None,
@@ -167,9 +228,9 @@ def fpredict(test_input,
                              pin_memory=False, drop_last=False, timeout=0,
                              worker_init_fn=None)
 
-    model = RNNForTimeSeries(50, 3)
-    model.load_state_dict(torch.load(save_model_path))
-    model.cuda()
+
+    if torch.cuda.is_available():
+        model.cuda()
 
 
 
@@ -180,8 +241,9 @@ def fpredict(test_input,
     for step, batch in enumerate(epoch_iterator):
 
             x = batch
-            x = x.cuda()
-            #y = y.cuda()
+            if torch.cuda.is_available():
+                x = x.cuda()
+
 
 
             logits= model(input=x,max_length=max_decode_length)
@@ -193,6 +255,62 @@ def fpredict(test_input,
                 res=np.concatenate((res,logits))
 
     return res
+
+
+# generate sequence data for local by slide window
+def produce_data(df, train_len, test_len=40):
+    total_len = train_len + test_len
+    loc2df = convert_local2values(df)
+    loc2data = {}
+    for loc in loc2df:
+        sub_df = loc2df[loc]
+        values = sub_df['Value'].to_numpy()
+
+        data_list = []
+        for i in range(values.size - total_len):
+            data = values[i:i + total_len]
+            data_list.append(data)
+
+        loc2data[loc] = np.array(data_list)
+
+    return loc2data
+
+if __name__=='__main__':
+    df, loc2values = read_ground_truth(r'/vc_data/zhuwe/jupyter_sever_logs/tc_sfr/data/2008_2018_tenyears')
+    df = df[df['Value'].notnull()]
+    df = df.sort_values(by=['DateTime'], ignore_index=True)
+
+    x_len = 60
+    y_len = 40
+
+    loc2data = produce_data(df, x_len, y_len)
+
+    model_dir = '/vc_data/zhuwe/jupyter_sever_logs/tc_sfr/wdata/rnn_models'
+    if not os.path.exists(model_dir):
+        os.makedirs(model_dir)
+
+    for loc in loc2data:
+        data = loc2data[loc]
+
+        train_size = int(data.shape[0] * 0.9)
+        train = data[:train_size, :]
+        dev = data[train_size:, :]
+
+        train_x = train[:, :x_len]
+        train_y = train[:, x_len:]
+
+        dev_x = dev[:, :x_len]
+        dev_y = dev[:, x_len:]
+
+        ftrain(train_input=train_x,
+               train_target=train_y,
+               Epoch=5,
+               batch_size=32,
+               lr=1e-5,
+               beta1=0.9,
+               beta2=0.999,
+               weight_decay=0,
+               save_model_path=os.path.join(model_dir, '{}_model.json'.format(loc)))
 
 
 

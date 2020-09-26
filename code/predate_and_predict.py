@@ -433,6 +433,33 @@ def online_infer_simple(date, local2lgb_loaded_models, fillval, delta_days,
     return loc2res
 
 
+def online_infer_rnn(date, local2lgb_loaded_model, fillval, delta_days,
+                        max_feature, output_dir,feature_size,max_size=5):
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    filename = download_pre_several_days(date, delta_days, output_dir)
+    df_x, locations = produce_features_locally(os.path.join(output_dir, filename),
+                                               max_feature,
+                                               fillval)
+    #num_cols = ["f_{}".format(i) for i in range(1, max_feature + 1)]
+    #preds = []
+
+    loc2res={}
+    for i in range(len(locations)):
+        loc=locations[i]
+        loc2res[loc]=[]
+        models=local2lgb_loaded_models[loc]
+        for j in range(feature_size):
+            if j < max_size:
+                lgb_loaded_model = models[j]
+                dev_y_pred_local = lgb_loaded_model.predict(df_x.iloc[i])
+                loc2res[loc].append(dev_y_pred_local[0])
+            else:
+                loc2res[loc].append(loc2res[loc][-1])
+
+    return loc2res
+
+
 
 def main():
     file = open("target_sites.csv", "r")
