@@ -132,7 +132,7 @@ class RNNForTimeSeries(nn.Module):
                 total_loss += loss
                 input = torch.cat([input, target[:, i:i + 1]], dim=1)
             else:
-                input = torch.cat([input, logits.unsequeeze(1)], dim=1)
+                input = torch.cat([input, logits.unsqueeze(1)], dim=1)
 
         if target is not None:
             return outputs, total_loss
