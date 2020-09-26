@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test submission 10 more data|rnn|cuda is avaliable">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/model.py" afterDir="false" />
-    </list>
+    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test submission 10 more data|predict" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,14 +27,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Dockerfile" value="3" />
-          <entry key="csv" value="1" />
+          <entry key="csv" value="2" />
           <entry key="py" value="16" />
           <entry key="sh" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="PLAIN_TEXT" value="9" />
           <entry key="Python" value="16" />
         </counts>
       </usages-collector>
@@ -45,15 +42,15 @@
         <counts>
           <entry key="Dockerfile" value="63" />
           <entry key="dummy" value="1" />
-          <entry key="py" value="5720" />
+          <entry key="py" value="6163" />
           <entry key="sh" value="232" />
-          <entry key="txt" value="333" />
+          <entry key="txt" value="358" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="629" />
-          <entry key="Python" value="5720" />
+          <entry key="PLAIN_TEXT" value="654" />
+          <entry key="Python" value="6163" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -82,12 +79,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="284" column="14" lean-forward="true" selection-start-line="284" selection-start-column="14" selection-end-line="284" selection-end-column="14" />
+            <state relative-caret-position="181">
+              <caret line="333" column="19" lean-forward="true" selection-start-line="333" selection-start-column="19" selection-end-line="333" selection-end-column="19" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1601122482156" expanded="true" signature="5975:5976" ph="..." />
+                <marker date="1601126974104" expanded="true" signature="5986:5987" ph="..." />
+                <marker date="1601126974104" expanded="true" signature="7223:7226" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/target_sites.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="5" selection-start-line="1" selection-end-line="10" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -118,6 +125,8 @@
       <find>load</find>
       <find>read_ground_truth</find>
       <find>50</find>
+      <find>batch</find>
+      <find>local2models</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -246,20 +255,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600140114723</updated>
-    </task>
-    <task id="LOCAL-00001" summary="test submission 3">
-      <created>1600479553838</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1600479553838</updated>
-    </task>
-    <task id="LOCAL-00002" summary="test submission 3|debug 1">
-      <created>1600479843254</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1600479843254</updated>
     </task>
     <task id="LOCAL-00003" summary="test submission 3|debug 2">
       <created>1600479924538</created>
@@ -590,11 +585,25 @@
       <option name="project" value="LOCAL" />
       <updated>1601100481918</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="test submission 10 more data|rnn|cuda is avaliable|batch_size=128">
+      <created>1601122514710</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1601122514711</updated>
+    </task>
+    <task id="LOCAL-00051" summary="test submission 10 more data|predict">
+      <created>1601126999989</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1601126999989</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
+    <frame x="-7" y="-7" width="1519" height="977" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966262" />
@@ -621,8 +630,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test submission 10 more data|500?" />
-    <MESSAGE value="test submission 10 more data|back to 50" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 10" />
     <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 5" />
@@ -646,7 +653,9 @@
     <MESSAGE value="test submission 10 more data|rnn|fix|train completed, change branch" />
     <MESSAGE value="test submission 10 more data|rnn|fix|train completed, change branch|train directly" />
     <MESSAGE value="test submission 10 more data|rnn|cuda is avaliable" />
-    <option name="LAST_COMMIT_MESSAGE" value="test submission 10 more data|rnn|cuda is avaliable" />
+    <MESSAGE value="test submission 10 more data|rnn|cuda is avaliable|batch_size=128" />
+    <MESSAGE value="test submission 10 more data|predict" />
+    <option name="LAST_COMMIT_MESSAGE" value="test submission 10 more data|predict" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/baseline.py">
@@ -704,9 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/target_sites.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/test.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -729,13 +735,21 @@
     <entry file="file://$PROJECT_DIR$/code/train.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/code/target_sites.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="5" selection-start-line="1" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/code/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="284" column="14" lean-forward="true" selection-start-line="284" selection-start-column="14" selection-end-line="284" selection-end-column="14" />
+        <state relative-caret-position="181">
+          <caret line="333" column="19" lean-forward="true" selection-start-line="333" selection-start-column="19" selection-end-line="333" selection-end-column="19" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1601122482156" expanded="true" signature="5975:5976" ph="..." />
+            <marker date="1601126974104" expanded="true" signature="5986:5987" ph="..." />
+            <marker date="1601126974104" expanded="true" signature="7223:7226" ph="..." />
           </folding>
         </state>
       </provider>
