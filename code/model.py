@@ -250,7 +250,7 @@ def fpredict(test_input,
 
 
             logits= model(input=x,max_length=max_decode_length)
-            logits=np.concatenate([x.to_numpy for x in logits],1)
+            logits=np.concatenate([x.numpy() for x in logits],1)
             print(logits.shape)
 
             if res is None:
