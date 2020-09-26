@@ -190,7 +190,8 @@ def ftrain(train_input, train_target,
                              worker_init_fn=None)
 
     model = RNNForTimeSeries(50, 3)
-    model.cuda()
+    if torch.cuda.is_available():
+        model.cuda()
 
     optimizer = Adam(model.parameters(), lr, betas=(beta1, beta2),
                      weight_decay=weight_decay)
@@ -201,8 +202,9 @@ def ftrain(train_input, train_target,
         for step, batch in enumerate(epoch_iterator):
 
             (x, y) = batch
-            x = x.cuda()
-            y = y.cuda()
+            if torch.cuda.is_available():
+                x = x.cuda()
+                y = y.cuda()
 
             # print(x.device)
             # print(x)
