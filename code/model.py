@@ -2,8 +2,10 @@ from torch import nn
 from torch.utils.data import Dataset, DataLoader
 from torch.optim import Adam
 import torch
+import numpy as np
 
 from tqdm import tqdm, trange
+
 
 class RNNForTimeSeries(nn.Module):
     def __init__(self, hidden_size, layer_num):
@@ -60,7 +62,7 @@ class RNNForTimeSeries(nn.Module):
         keep_input = input
         total_loss = 0.
         for i in range(max_length):
-            print('debug {}'.format(input.shape))
+            # print('debug {}'.format(input.shape))
             logits = self._step(input, batch_size)
             outputs.append(logits)
             if target is not None:
@@ -91,7 +93,7 @@ class RNNForTimeSeries(nn.Module):
 class TSDataset(torch.utils.data.Dataset):
     'Characterizes a dataset for PyTorch'
 
-    def __init__(self, X, Y):
+    def __init__(self, X, Y=None):
         'Initialization'
         self.X = X
         self.Y = Y
@@ -108,12 +110,18 @@ class TSDataset(torch.utils.data.Dataset):
         # y=self.Y.iloc[index]
 
         x = self.X[index]
-        y = self.Y[index]
+        if self.Y is not None:
+            y = self.Y[index]
+            return x, y
 
-        return x, y
+        else:
+            return x
 
 
-def ftrain(train_input, train_target, Epoch, batch_size, lr, beta1, beta2, weight_decay):
+def ftrain(train_input, train_target,
+           Epoch, batch_size, lr,
+           beta1, beta2, weight_decay,
+           save_model_path='model.json'):
     trainset = TSDataset(X=train_input, Y=train_target)
     trainloader = DataLoader(trainset, batch_size=batch_size, shuffle=True, sampler=None,
                              batch_sampler=None, num_workers=0, collate_fn=None,
@@ -121,6 +129,7 @@ def ftrain(train_input, train_target, Epoch, batch_size, lr, beta1, beta2, weigh
                              worker_init_fn=None)
 
     model = RNNForTimeSeries(50, 3)
+    model.cuda()
 
     optimizer = Adam(model.parameters(), lr, betas=(beta1, beta2),
                      weight_decay=weight_decay)
@@ -130,12 +139,62 @@ def ftrain(train_input, train_target, Epoch, batch_size, lr, beta1, beta2, weigh
         epoch_iterator = tqdm(trainloader, desc="Iteration")
         for step, batch in enumerate(epoch_iterator):
 
-            (x,y)=batch
+            (x, y) = batch
+            x = x.cuda()
+            y = y.cuda()
+
+            # print(x.device)
+            # print(x)
 
             optimizer.zero_grad()
+            # optimizer.cuda()
 
             logits, loss = model(input=x, target=y)
 
             if torch.is_tensor(loss):
                 loss.backward()
                 optimizer.step()
+
+    torch.save(model.state_dict(), save_model_path)
+
+def fpredict(test_input,
+             batch_size,
+           save_model_path='model.json',
+           max_decode_length=40):
+    testset = TSDataset(X=test_input)
+    testloader = DataLoader(testset, batch_size=batch_size, shuffle=False, sampler=None,
+                             batch_sampler=None, num_workers=0, collate_fn=None,
+                             pin_memory=False, drop_last=False, timeout=0,
+                             worker_init_fn=None)
+
+    model = RNNForTimeSeries(50, 3)
+    model.load_state_dict(torch.load(save_model_path))
+    model.cuda()
+
+
+
+    epoch_iterator = tqdm(testloader, desc="Iteration")
+
+    res=None
+
+    for step, batch in enumerate(epoch_iterator):
+
+            x = batch
+            x = x.cuda()
+            #y = y.cuda()
+
+
+            logits= model(input=x,max_length=max_decode_length)
+            logits=logits.to_numpy()
+
+            if res is None:
+                res=logits
+            else:
+                res=np.concatenate((res,logits))
+
+    return res
+
+
+
+
+
