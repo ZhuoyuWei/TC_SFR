@@ -349,7 +349,8 @@ if __name__=='__main__':
                  batch_size=128,
                  model=local2models[loc],
                  max_decode_length=40)
-            print(res)
+
+            print(res.shape)
 
 
 
