@@ -748,7 +748,7 @@ locations=['BNDN5','ARWN8','TCCC1','CARO2','ESSC2','NFDC1','LABW4','CLNK1','TRAC
 
 
 def online_infer_rnn(date, local2lgb_loaded_model, fillval, delta_days,
-                        max_feature, output_dir,feature_size):
+                        max_feature, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     filename = download_pre_several_days(date, delta_days, output_dir)
@@ -758,7 +758,7 @@ def online_infer_rnn(date, local2lgb_loaded_model, fillval, delta_days,
     #num_cols = ["f_{}".format(i) for i in range(1, max_feature + 1)]
     #preds = []
 
-    df_x=df_x[:,:feature_size]
+    #df_x=df_x[:,:feature_size]
 
     loc2res={}
     for i in range(len(locations)):
@@ -827,8 +827,8 @@ def main():
         for date in target_dates:
 
             #local2latest = download_pre_day(date,output_dir)
-            local2res = online_infer_simple(date, local2models, fillval, delta_days,
-                                            max_feature, output_dir,60,1)
+            local2res = online_infer_rnn(date, local2models, fillval, delta_days,
+                        max_feature, output_dir)
 
             for site in target_sites:
 
