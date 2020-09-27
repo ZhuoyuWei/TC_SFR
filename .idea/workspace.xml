@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test nn method|test 11">
+    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test nn method|test 12">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,15 +44,15 @@
         <counts>
           <entry key="Dockerfile" value="63" />
           <entry key="dummy" value="1" />
-          <entry key="py" value="6861" />
+          <entry key="py" value="6867" />
           <entry key="sh" value="233" />
-          <entry key="txt" value="418" />
+          <entry key="txt" value="419" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="715" />
-          <entry key="Python" value="6861" />
+          <entry key="PLAIN_TEXT" value="716" />
+          <entry key="Python" value="6867" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -67,12 +67,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="787" column="25" lean-forward="true" selection-start-line="787" selection-start-column="25" selection-end-line="788" selection-end-column="42" />
+            <state relative-caret-position="67">
+              <caret line="375" column="4" selection-start-line="375" selection-start-column="4" selection-end-line="375" selection-end-column="4" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1601204704025" expanded="true" signature="8792:8793" ph="..." />
-                <marker date="1601204704025" expanded="true" signature="11395:11848" ph="..." />
+                <marker date="1601205407761" expanded="true" signature="8792:8793" ph="..." />
+                <marker date="1601205407761" expanded="true" signature="11395:11848" ph="..." />
               </folding>
             </state>
           </provider>
@@ -160,6 +160,7 @@
       <find>online_infer_simple</find>
       <find>fpredict</find>
       <find>fpredict(</find>
+      <find>convert_local2values</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -288,13 +289,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600140114723</updated>
-    </task>
-    <task id="LOCAL-00023" summary="test submission 10 more data|500?">
-      <created>1600788072392</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1600788072392</updated>
     </task>
     <task id="LOCAL-00024" summary="test submission 10 more data|back to 50">
       <created>1600788542619</created>
@@ -632,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601204710501</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="test nn method|test 12">
+      <created>1601205413203</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1601205413203</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -663,7 +664,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test submission 10 more data|rnn|fix" />
     <MESSAGE value="test submission 10 more data|rnn|fix|train completed, change branch" />
     <MESSAGE value="test submission 10 more data|rnn|fix|train completed, change branch|train directly" />
     <MESSAGE value="test submission 10 more data|rnn|cuda is avaliable" />
@@ -688,7 +688,8 @@
     <MESSAGE value="test nn method|test 9" />
     <MESSAGE value="test nn method|test 10" />
     <MESSAGE value="test nn method|test 11" />
-    <option name="LAST_COMMIT_MESSAGE" value="test nn method|test 11" />
+    <MESSAGE value="test nn method|test 12" />
+    <option name="LAST_COMMIT_MESSAGE" value="test nn method|test 12" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/baseline.py">
@@ -777,12 +778,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="787" column="25" lean-forward="true" selection-start-line="787" selection-start-column="25" selection-end-line="788" selection-end-column="42" />
+        <state relative-caret-position="67">
+          <caret line="375" column="4" selection-start-line="375" selection-start-column="4" selection-end-line="375" selection-end-column="4" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1601204704025" expanded="true" signature="8792:8793" ph="..." />
-            <marker date="1601204704025" expanded="true" signature="11395:11848" ph="..." />
+            <marker date="1601205407761" expanded="true" signature="8792:8793" ph="..." />
+            <marker date="1601205407761" expanded="true" signature="11395:11848" ph="..." />
           </folding>
         </state>
       </provider>
