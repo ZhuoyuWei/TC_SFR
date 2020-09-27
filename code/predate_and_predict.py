@@ -373,6 +373,9 @@ def produce_features_locally(filename, max_feature, fillval):
 
     return df_res, locations
 
+
+
+
 def online_infer_locally(date, local2lgb_loaded_model, fillval, delta_days, max_feature, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -759,6 +762,8 @@ def online_infer_rnn(date, local2lgb_loaded_model, fillval, delta_days,
     #preds = []
 
     #df_x=df_x[:,:feature_size]
+
+    df_x=df_x.numpy()
 
     loc2res={}
     for i in range(len(locations)):
