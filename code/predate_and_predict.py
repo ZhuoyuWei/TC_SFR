@@ -883,14 +883,14 @@ def main():
                         #print((date + timedelta(days=day)).strftime(
                         #    "%Y-%m-%d") + "T" + time + "," + site.strip() + "," + date.strftime(
                         #    "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)
-                        #value=values[vcount]
-                        '''
-                        if vcount<2:
+                        value=values[vcount]
+
+                        if vcount<5:
                             value=values[vcount]
                         else:
-                            value=values[1]
-                        '''
-                        value=values[vcount]
+                            value=values[4]
+
+                        #value=values[vcount]
                         if str(value).lower()=='nan':
                             value=0
                         #if site.strip() in ignore_sites:
