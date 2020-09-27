@@ -802,7 +802,7 @@ def online_infer_rnn(date, local2lgb_loaded_model, fillval, delta_days,
         loc=locations[i]
         loc2res[loc]=[]
         model=local2lgb_loaded_model[loc]
-        df=df_x[loc].expand_dims(axis=0)#.to_numpy()
+        df=np.expand_dims(df_x[loc],axis=0)#.to_numpy()
         print('input local df_x shape={}', format(df.shape))
 
 
