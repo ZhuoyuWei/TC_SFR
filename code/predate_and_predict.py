@@ -791,7 +791,7 @@ def online_infer_rnn(date, local2lgb_loaded_model, fillval, delta_days,
                                                fillval)
     #num_cols = ["f_{}".format(i) for i in range(1, max_feature + 1)]
     #preds = []
-    loc2data=convert_local2values(df_x)
+    #loc2data=convert_local2values(df_x)
     #df_x=df_x[:,:feature_size]
 
     #df_x=df_x.to_numpy()
@@ -802,7 +802,7 @@ def online_infer_rnn(date, local2lgb_loaded_model, fillval, delta_days,
         loc=locations[i]
         loc2res[loc]=[]
         model=local2lgb_loaded_model[loc]
-        df=loc2data[loc].to_numpy()
+        df=df_x[loc].to_numpy()
         print('input local df_x shape={}', format(df.shape))
 
 
