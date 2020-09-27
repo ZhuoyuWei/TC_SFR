@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test nn method|test 15">
-      <change beforePath="$PROJECT_DIR$/code/predate_and_predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/predate_and_predict.py" afterDir="false" />
+    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test nn method|test 17">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,14 +29,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Dockerfile" value="4" />
-          <entry key="csv" value="2" />
+          <entry key="csv" value="3" />
           <entry key="py" value="18" />
           <entry key="sh" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="PLAIN_TEXT" value="13" />
           <entry key="Python" value="18" />
         </counts>
       </usages-collector>
@@ -44,15 +44,15 @@
         <counts>
           <entry key="Dockerfile" value="63" />
           <entry key="dummy" value="1" />
-          <entry key="py" value="6912" />
+          <entry key="py" value="6943" />
           <entry key="sh" value="233" />
-          <entry key="txt" value="422" />
+          <entry key="txt" value="424" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="719" />
-          <entry key="Python" value="6912" />
+          <entry key="PLAIN_TEXT" value="721" />
+          <entry key="Python" value="6943" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -64,16 +64,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="804" column="36" selection-start-line="804" selection-start-column="36" selection-end-line="804" selection-end-column="36" />
+            <state relative-caret-position="559">
+              <caret line="843" column="50" selection-start-line="843" selection-start-column="50" selection-end-line="843" selection-end-column="50" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1601209875556" expanded="true" signature="8792:8793" ph="..." />
-                <marker date="1601209875556" expanded="true" signature="11395:11848" ph="..." />
+                <marker date="1601210095121" expanded="true" signature="8792:8793" ph="..." />
+                <marker date="1601210095121" expanded="true" signature="11395:11848" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/target_sites.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="5" selection-start-line="1" selection-end-line="10" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -106,6 +115,7 @@
       <find>fpredict</find>
       <find>fpredict(</find>
       <find>convert_local2values</find>
+      <find>fpredi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -234,20 +244,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600140114723</updated>
-    </task>
-    <task id="LOCAL-00027" summary="test submission 10 more data|back to 50|+ignore|test only first 10">
-      <created>1600872344036</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1600872344036</updated>
-    </task>
-    <task id="LOCAL-00028" summary="test submission 10 more data|back to 50|+ignore|test only first 5">
-      <created>1600872527103</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1600872527103</updated>
     </task>
     <task id="LOCAL-00029" summary="test submission 10 more data|back to 50|+ignore|test only first 5|remove special">
       <created>1600873365572</created>
@@ -578,11 +574,26 @@
       <option name="project" value="LOCAL" />
       <updated>1601209637243</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="test nn method|test 16">
+      <created>1601209882622</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1601209882622</updated>
+    </task>
+    <task id="LOCAL-00077" summary="test nn method|test 17">
+      <created>1601210102879</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1601210102879</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966262" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -608,8 +619,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test submission 10 more data|rnn|cuda is avaliable|batch_size=128" />
-    <MESSAGE value="test submission 10 more data|predict" />
     <MESSAGE value="test nn method" />
     <MESSAGE value="test nn method|fix bug" />
     <MESSAGE value="test nn method|fix bug 2" />
@@ -633,7 +642,9 @@
     <MESSAGE value="test nn method|test 13" />
     <MESSAGE value="test nn method|test 14" />
     <MESSAGE value="test nn method|test 15" />
-    <option name="LAST_COMMIT_MESSAGE" value="test nn method|test 15" />
+    <MESSAGE value="test nn method|test 16" />
+    <MESSAGE value="test nn method|test 17" />
+    <option name="LAST_COMMIT_MESSAGE" value="test nn method|test 17" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/baseline.py">
@@ -710,25 +721,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/target_sites.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="5" selection-start-line="1" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/train.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="804" column="36" selection-start-line="804" selection-start-column="36" selection-end-line="804" selection-end-column="36" />
+        <state relative-caret-position="559">
+          <caret line="843" column="50" selection-start-line="843" selection-start-column="50" selection-end-line="843" selection-end-column="50" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1601209875556" expanded="true" signature="8792:8793" ph="..." />
-            <marker date="1601209875556" expanded="true" signature="11395:11848" ph="..." />
+            <marker date="1601210095121" expanded="true" signature="8792:8793" ph="..." />
+            <marker date="1601210095121" expanded="true" signature="11395:11848" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/target_sites.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="5" selection-start-line="1" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>

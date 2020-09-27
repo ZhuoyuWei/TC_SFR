@@ -891,6 +891,8 @@ def main():
                             value=values[1]
                         '''
                         value=values[vcount]
+                        if str(value).lower()=='nan':
+                            value=0
                         #if site.strip() in ignore_sites:
                         #    value=0
                         fout.write((date + timedelta(days=day)).strftime(
