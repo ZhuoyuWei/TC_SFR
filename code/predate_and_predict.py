@@ -697,11 +697,15 @@ def fpredict(test_input,
 def load_model(filename,seqlen=50,layers=3):
     model = RNNForTimeSeries(seqlen, layers)
 
+
     if torch.cuda.is_available():
         model.load_state_dict(torch.load(filename))
         model.cuda()
     else:
-        model.load_state_dict(torch.load(filename), map_location=torch.device('cpu'))
+        model.load_state_dict(torch.load(filename, map_location=torch.device('cpu')))
+
+
+
     return model
 
 def loading_models_rnn(model_dir,locations):
