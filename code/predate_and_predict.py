@@ -885,10 +885,10 @@ def main():
                         #    "%Y-%m-%dT%H") + ",TC+wzyxp_123,{},CFS".format(value)
                         value=values[vcount]
 
-                        if vcount<5:
+                        if vcount<3:
                             value=values[vcount]
                         else:
-                            value=values[4]
+                            value=values[2]
 
                         #value=values[vcount]
                         if str(value).lower()=='nan':
