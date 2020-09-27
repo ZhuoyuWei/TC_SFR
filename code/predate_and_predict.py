@@ -724,6 +724,8 @@ def fpredict(test_input,
             else:
                 res=np.concatenate((res,logits))
 
+    res=np.squeeze(res)
+
     print('step 3 res {}'.format(res.shape))
 
     return res
