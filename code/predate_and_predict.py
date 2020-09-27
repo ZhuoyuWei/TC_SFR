@@ -763,7 +763,7 @@ def online_infer_rnn(date, local2lgb_loaded_model, fillval, delta_days,
 
     #df_x=df_x[:,:feature_size]
 
-    df_x=df_x.numpy()
+    df_x=df_x.to_numpy()
 
     loc2res={}
     for i in range(len(locations)):
