@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test nn method|test 5">
+    <list default="true" id="309d0a72-834b-4670-b104-f3a90f17f242" name="Default" comment="test nn method|test 7">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/predate_and_predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/predate_and_predict.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,15 +45,15 @@
         <counts>
           <entry key="Dockerfile" value="63" />
           <entry key="dummy" value="1" />
-          <entry key="py" value="6484" />
+          <entry key="py" value="6607" />
           <entry key="sh" value="233" />
-          <entry key="txt" value="401" />
+          <entry key="txt" value="412" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="698" />
-          <entry key="Python" value="6484" />
+          <entry key="PLAIN_TEXT" value="709" />
+          <entry key="Python" value="6607" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -67,12 +68,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="765" column="13" selection-start-line="765" selection-start-column="13" selection-end-line="765" selection-end-column="13" />
+            <state relative-caret-position="508">
+              <caret line="690" column="75" selection-start-line="690" selection-start-column="75" selection-end-line="690" selection-end-column="75" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1601194225610" expanded="true" signature="8792:8793" ph="..." />
-                <marker date="1601194225610" expanded="true" signature="11395:11848" ph="..." />
+                <marker date="1601196496565" expanded="true" signature="8792:8793" ph="..." />
+                <marker date="1601196496565" expanded="true" signature="11395:11848" ph="..." />
               </folding>
             </state>
           </provider>
@@ -287,20 +288,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600140114723</updated>
-    </task>
-    <task id="LOCAL-00017" summary="test submission 9|propose">
-      <created>1600714125958</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1600714125958</updated>
-    </task>
-    <task id="LOCAL-00018" summary="test submission 9|propose|debug 1">
-      <created>1600714793005</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1600714793005</updated>
     </task>
     <task id="LOCAL-00019" summary="test submission 9|propose|debug 2">
       <created>1600714887997</created>
@@ -631,7 +618,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601191898366</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="test nn method|test 6|to numpy">
+      <created>1601194238095</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1601194238095</updated>
+    </task>
+    <task id="LOCAL-00067" summary="test nn method|test 7">
+      <created>1601194402733</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1601194402733</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -662,8 +663,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first" />
-    <MESSAGE value="test submission 10 more data|back to 50|+ignore|test only first 2|dont donwload" />
     <MESSAGE value="test submission 10 more data|fix bug last" />
     <MESSAGE value="test submission 10 more data|fix bug last 2" />
     <MESSAGE value="test submission 10 more data|new model" />
@@ -687,7 +686,9 @@
     <MESSAGE value="test nn method|test 3" />
     <MESSAGE value="test nn method|test 4" />
     <MESSAGE value="test nn method|test 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="test nn method|test 5" />
+    <MESSAGE value="test nn method|test 6|to numpy" />
+    <MESSAGE value="test nn method|test 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="test nn method|test 7" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/baseline.py">
@@ -776,12 +777,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/predate_and_predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="765" column="13" selection-start-line="765" selection-start-column="13" selection-end-line="765" selection-end-column="13" />
+        <state relative-caret-position="508">
+          <caret line="690" column="75" selection-start-line="690" selection-start-column="75" selection-end-line="690" selection-end-column="75" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1601194225610" expanded="true" signature="8792:8793" ph="..." />
-            <marker date="1601194225610" expanded="true" signature="11395:11848" ph="..." />
+            <marker date="1601196496565" expanded="true" signature="8792:8793" ph="..." />
+            <marker date="1601196496565" expanded="true" signature="11395:11848" ph="..." />
           </folding>
         </state>
       </provider>

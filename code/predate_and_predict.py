@@ -687,13 +687,19 @@ def fpredict(test_input,
 
 
             logits= model(input=x,max_length=max_decode_length)
-            logits=np.concatenate([x.cpu().detach().numpy() for x in logits],1)
-            print(logits.shape)
+            logits=[x.cpu().detach().numpy() for x in logits]
+            print('step 1 logits {}\t{}'.format(len(logits),logits[0].shape))
+            logits=np.concatenate(logits,1)
+            print('step 2 logits {}'.format(logits.shape))
+
+
 
             if res is None:
                 res=logits
             else:
                 res=np.concatenate((res,logits))
+
+    print('step 3 res {}'.format(res.shape))
 
     return res
 
@@ -764,6 +770,7 @@ def online_infer_rnn(date, local2lgb_loaded_model, fillval, delta_days,
     #df_x=df_x[:,:feature_size]
 
     df_x=df_x.to_numpy()
+    print('input df_x shape={}',format(df_x))
 
     loc2res={}
     for i in range(len(locations)):
