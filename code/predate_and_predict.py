@@ -373,7 +373,32 @@ def produce_features_locally(filename, max_feature, fillval):
 
     return df_res, locations
 
+def produce_features_rnn(filename, max_feature, fillval):
+    df, local2values = read_ground_truth_withoutfloat(filename)
 
+    df = df[df['Value'] != 'Ice']
+    local2values = convert_local2values(df)
+    #data = []
+    locations = []
+    local2data={}
+    for local in local2values:
+        locations.append(local)
+        sub_df = local2values[local]
+        sub_df = sub_df.sort_values(by='DateTime', ignore_index=True, ascending=False)
+        features = sub_df['Value'].values[:max_feature].tolist()
+        # print('debug features type {}'.format(features) )
+        while len(features) < max_feature:
+            features.append(fillval)
+        #data.append(features)
+        local2data[local]=np.array(features)
+    # cat_cols=['LocationID']
+    num_cols = ["f_{}".format(i) for i in range(1, max_feature + 1)]
+    # header=cat_cols+num_cols
+
+    #df_res = pd.DataFrame(data, columns=num_cols)
+    # df_res=ord_encoder.transform(df_res)
+
+    return local2data, locations
 
 
 def online_infer_locally(date, local2lgb_loaded_model, fillval, delta_days, max_feature, output_dir):
@@ -761,7 +786,7 @@ def online_infer_rnn(date, local2lgb_loaded_model, fillval, delta_days,
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     filename = download_pre_several_days(date, delta_days, output_dir)
-    df_x, locations = produce_features_locally(os.path.join(output_dir, filename),
+    df_x, locations = produce_features_rnn(os.path.join(output_dir, filename),
                                                max_feature,
                                                fillval)
     #num_cols = ["f_{}".format(i) for i in range(1, max_feature + 1)]
